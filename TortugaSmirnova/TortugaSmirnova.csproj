@@ -119,13 +119,26 @@
     <Compile Include="EF\Table.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="EF\VW_Composition.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DishWindow.xaml.cs">
+      <DependentUpon>DishWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\MenuWindow.xaml.cs">
       <DependentUpon>MenuWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\OrderWindow.xaml.cs">
+      <DependentUpon>OrderWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="Window1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DishWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -142,6 +155,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Windows\MenuWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\OrderWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -200,9 +217,35 @@
     <Folder Include="Pages\" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Windows\Admin.png" />
+    <Resource Include="RES\Admin.png" />
     <Resource Include="themanburger.png" />
     <Resource Include="DishesImages\cheeseburger.png" />
     <Resource Include="DishesImages\themanburger.png" />
+    <Resource Include="DishesImages\meandmyShadow.png" />
+    <Resource Include="DishesImages\Shawarma.png" />
+    <Resource Include="DishesImages\Shawarmaincheeselavash.png" />
+    <Resource Include="DishesImages\margarita.png" />
+    <Resource Include="DishesImages\piccamyasnaya10.png" />
+    <Resource Include="DishesImages\gribnaya.png" />
+    <Resource Include="DishesImages\milkshake.png" />
+    <Resource Include="DishesImages\Mojito.png" />
+    <Resource Include="DishesImages\Cherrypie.png" />
+    <Resource Include="DishesImages\donut.png" />
+    <Resource Include="DishesImages\burger.png" />
+    <Resource Include="DishesImages\LenyBurger.png" />
+    <Resource Include="DishesImages\Chesnok.png" />
+    <Resource Include="DishesImages\vegan.png" />
+    <Resource Include="DishesImages\pita.png" />
+    <Resource Include="DishesImages\Ostro.png" />
+    <Resource Include="DishesImages\banan.png" />
+    <Resource Include="DishesImages\pivo.png" />
+    <Resource Include="DishesImages\tunec.png" />
+    <Resource Include="DishesImages\1-fastfood_shaurma-v-pite.png" />
+    <Resource Include="DishesImages\MohitoSTRAWBERRY.png" />
+    <Resource Include="DishesImages\cheesecake.png" />
+    <Resource Include="DishesImages\photo.png" />
+    <Resource Include="DishesImages\maxresdefault.png" />
     <Content Include="EF\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>

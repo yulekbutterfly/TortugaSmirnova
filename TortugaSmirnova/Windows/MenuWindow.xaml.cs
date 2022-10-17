@@ -80,5 +80,12 @@ namespace TortugaSmirnova.Windows
             listDish = Classes.AppData.Context.Dish.Where(i=>i.IDMenu==category).ToList();
             lvMenu.ItemsSource=listDish;
         }
+
+        private void lvMenu_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var dish = lvMenu.SelectedItem as EF.Dish;
+            DishWindow dishWindow = new DishWindow(dish);
+            dishWindow.ShowDialog();
+        }
     }
 }

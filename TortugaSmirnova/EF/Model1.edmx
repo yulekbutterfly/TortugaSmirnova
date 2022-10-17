@@ -102,6 +102,17 @@
           <Property Name="ID" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Number" Type="nvarchar" MaxLength="10" Nullable="false" />
         </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Tortuga's.dbo.VW_Composition" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="VW_Composition">
+          <Key>
+            <PropertyRef Name="DishID" />
+            <PropertyRef Name="DishTitle" />
+          </Key>
+          <Property Name="DishID" Type="int" Nullable="false" />
+          <Property Name="DishTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Composition" Type="nvarchar" MaxLength="4000" />
+        </EntityType>
         <Association Name="FK_Dish_Menu1">
           <End Role="Menu" Type="Self.Menu" Multiplicity="1" />
           <End Role="Dish" Type="Self.Dish" Multiplicity="*" />
@@ -253,6 +264,13 @@
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VW_Composition" EntityType="Self.VW_Composition" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VW_Composition].[DishID] AS [DishID], 
+    [VW_Composition].[DishTitle] AS [DishTitle], 
+    [VW_Composition].[Composition] AS [Composition]
+    FROM [dbo].[VW_Composition] AS [VW_Composition]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_Dish_Menu1" Association="Self.FK_Dish_Menu1">
             <End Role="Menu" EntitySet="Menu" />
             <End Role="Dish" EntitySet="Dish" />
@@ -336,6 +354,7 @@
           <EntitySet Name="Role" EntityType="Model.Role" />
           <EntitySet Name="sysdiagrams" EntityType="Model.sysdiagrams" />
           <EntitySet Name="Table" EntityType="Model.Table" />
+          <EntitySet Name="VW_Composition" EntityType="Model.VW_Composition" />
           <AssociationSet Name="FK_Dish_Menu1" Association="Model.FK_Dish_Menu1">
             <End Role="Menu" EntitySet="Menu" />
             <End Role="Dish" EntitySet="Dish" />
@@ -372,7 +391,7 @@
             <End Role="Order" EntitySet="Order" />
             <End Role="OrderDish" EntitySet="OrderDish" />
           </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
           <Property Type="Binary" Name="definition" Nullable="true" />
@@ -499,6 +518,15 @@
           <Property Name="Number" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Order" Relationship="Model.FK_Order_Table" FromRole="Table" ToRole="Order" />
         </EntityType>
+        <EntityType Name="VW_Composition">
+          <Key>
+            <PropertyRef Name="DishID" />
+            <PropertyRef Name="DishTitle" />
+          </Key>
+          <Property Name="DishID" Type="Int32" Nullable="false" />
+          <Property Name="DishTitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Composition" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+        </EntityType>
         <Association Name="FK_Dish_Menu1">
           <End Type="Model.Menu" Role="Menu" Multiplicity="1" />
           <End Type="Model.Dish" Role="Dish" Multiplicity="*" />
@@ -607,7 +635,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -745,7 +773,16 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          <EntitySetMapping Name="VW_Composition">
+            <EntityTypeMapping TypeName="Model.VW_Composition">
+              <MappingFragment StoreEntitySet="VW_Composition">
+                <ScalarProperty Name="Composition" ColumnName="Composition" />
+                <ScalarProperty Name="DishTitle" ColumnName="DishTitle" />
+                <ScalarProperty Name="DishID" ColumnName="DishID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:TortugaSmirnova"
         mc:Ignorable="d"
         Title="MainWindow" Height="1200" Width="800" Background="#FFF2D8BC">
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1.6*"/>
@@ -20,7 +21,12 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-
+        <Image
+            Grid.Row="1"
+            Grid.Column="1" Source="/Windows/Admin.png"
+            >
+            
+        </Image>
         <Border
             Grid.ColumnSpan="2"
             Grid.Row="0" 
@@ -36,7 +42,9 @@
             FontFamily="Inter"/>
         </Border>
 
-        <Button x:Name="btntable1"
+        <Button Style="{DynamicResource ButtonStyleImageButton}" 
+                
+                x:Name="btntable1"
                 Grid.Row="1"
                 Grid.Column="0"               
                 Width="100"
@@ -50,6 +58,7 @@
             </Button.Background>
         </Button>
         <Button x:Name="btntable2"
+                Style="{DynamicResource ButtonStyleImageButton}"
                 Grid.Row="2"
                 Grid.Column="0" 
                 Width="100"
@@ -63,6 +72,7 @@
             </Button.Background>
         </Button>
         <Button x:Name="btntable3"
+                Style="{DynamicResource ButtonStyleImageButton}"
                 Grid.Row="3"
                 Grid.Column="0" 
                 Width="100"
@@ -76,6 +86,7 @@
             </Button.Background>
         </Button>
         <Button x:Name="btntable4"
+                Style="{DynamicResource ButtonStyleImageButton}"
                 Grid.Row="4"
                 Grid.Column="0" 
                 Width="100"
@@ -89,6 +100,7 @@
             </Button.Background>
         </Button>
         <Button x:Name="btntable5"
+                Style="{DynamicResource ButtonStyleImageButton}"
                 Grid.Row="2"
                 Grid.Column="1" 
                 Width="100"
@@ -102,6 +114,7 @@
             </Button.Background>
         </Button>
         <Button x:Name="btntable6"
+                Style="{DynamicResource ButtonStyleImageButton}"
                 Grid.Row="3"
                 Grid.Column="1" 
                 Width="100"
@@ -115,6 +128,7 @@
             </Button.Background>
         </Button>
         <Button x:Name="btntable7"
+                Style="{DynamicResource ButtonStyleImageButton}"
                 Grid.Row="4"
                 Grid.Column="1" 
                 Width="100"
@@ -128,6 +142,7 @@
             </Button.Background>
         </Button>
         <Button x:Name="btntable8"
+                Style="{DynamicResource ButtonStyleImageButton}"
                 Grid.Row="1"
                 Grid.Column="2" 
                 Width="100"
@@ -141,6 +156,7 @@
             </Button.Background>
         </Button>
         <Button x:Name="btntable9"
+                Style="{DynamicResource ButtonStyleImageButton}"
                 Grid.Row="2"
                 Grid.Column="2" 
                 Width="100"
@@ -154,6 +170,7 @@
             </Button.Background>
         </Button>
         <Button x:Name="btntable10"
+                Style="{DynamicResource ButtonStyleImageButton}"
                 Grid.Row="3"
                 Grid.Column="2" 
                 Width="100"
@@ -167,6 +184,7 @@
             </Button.Background>
         </Button>
         <Button x:Name="btntable11"
+                Style="{DynamicResource ButtonStyleImageButton}"
                 Grid.Row="4"
                 Grid.Column="2" 
                 Width="100"

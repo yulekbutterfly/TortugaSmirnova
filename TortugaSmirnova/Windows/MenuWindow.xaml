@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:TortugaSmirnova.Windows"
         mc:Ignorable="d"
         Title="MenuWindow" Height="1200" Width="800" Background="#FFF2D8BC">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.3*"/>
@@ -31,16 +32,23 @@
                     FontSize="32" Foreground="#FF292929"
                     FontWeight="Bold"
                     Margin="0 0 50 0"
+                    Background="{x:Null}"                     
                     />
-                <TextBlock
-                    Text="Заказ"
+                <Button Style="{DynamicResource ButtonStyleDefault}"
+                    Content="Заказ"
                     FontSize="32" Foreground="#FF292929"
                     Margin="0 0 50 0"
+                    Background="{x:Null}" 
+                    BorderBrush="{x:Null}"
+                        x:Name="btnOrder"
                     />
-                <TextBlock
-                    Text="Выбор столика"
+                <Button Style="{DynamicResource ButtonStyleDefault}"
+                    Content="Выбор столика"
                     FontSize="32" Foreground="#FF292929"
                     Margin="0 0 0 0"
+                    Background="{x:Null}" 
+                    BorderBrush="{x:Null}"
+                        x:Name="btnChoiseTable"
                     />
             </WrapPanel>
         </Border>
@@ -52,31 +60,31 @@
             <StackPanel          
             HorizontalAlignment="Center"
             VerticalAlignment="Center">
-                <Button
+                <Button Style="{DynamicResource ButtonStyleDefault}"
                     Content="Пицца >"
                 x:Name="btnPizza"
                     FontSize="32" Foreground="#FF292929"
                     Margin="0 0 0 50" BorderBrush="{x:Null}" Background="{x:Null}" Click="btnPizza_Click"
                     />
-                <Button
+                <Button Style="{DynamicResource ButtonStyleDefault}"
                     Content="Шаурма >"
                 x:Name="btnShawerma"
                     FontSize="32" Foreground="#FF292929"
                     Margin="0 0 0 50" BorderBrush="{x:Null}" Background="{x:Null}" Click="btnShawerma_Click"
                     />
-                <Button
+                <Button Style="{DynamicResource ButtonStyleDefault}"
                     Content="Бургеры >"
                 x:Name="btnBurgers"
                     FontSize="32" Foreground="#FF292929"
                     Margin="0 0 0 50" BorderBrush="{x:Null}" Background="{x:Null}" Click="btnBurgers_Click"
                     />
-                <Button
+                <Button Style="{DynamicResource ButtonStyleDefault}"
                     Content="Десерты >"
                 x:Name="btnDesserts"
                     FontSize="32" Foreground="#FF292929"
                     Margin="0 0 0 50" BorderBrush="{x:Null}" Background="{x:Null}" Click="btnDesserts_Click"
                     />
-                <Button
+                <Button Style="{DynamicResource ButtonStyleDefault}"
                     Content="Напитки >"
                 x:Name="btnDrinks"
                     FontSize="32" Foreground="#FF292929"
@@ -85,7 +93,7 @@
             </StackPanel>
         </Border>
 
-        <ListView
+        <ListView Style="{DynamicResource ListViewStyleDefault}"
             Grid.Column="1"
             Grid.Row="3"
             Background="#FFF0CAA3"
@@ -93,7 +101,7 @@
             Foreground="{x:Null}"
             x:Name="lvMenu"
             ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-            HorizontalContentAlignment="Center">
+            HorizontalContentAlignment="Center" MouseDoubleClick="lvMenu_MouseDoubleClick">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel/>
@@ -101,10 +109,14 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Button
+                    <Border
+                    
                     Width="200"
                     Height="200"
-                    Margin="0 10 5 0" Background="White" BorderBrush="{x:Null}">
+                    Margin="0 10 5 0"
+                    Background="White"
+                    BorderBrush="{x:Null}"
+                        CornerRadius="10">
                         <StackPanel
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
@@ -125,7 +137,7 @@
                                 TextAlignment="Center"
                                 />
                         </StackPanel>
-                    </Button>
+                    </Border>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
