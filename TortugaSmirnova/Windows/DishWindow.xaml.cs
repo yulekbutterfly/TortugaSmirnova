@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TortugaSmirnova.Classes;
 
 namespace TortugaSmirnova.Windows
 {
@@ -19,9 +20,11 @@ namespace TortugaSmirnova.Windows
     /// </summary>
     public partial class DishWindow : Window
     {
+        EF.Dish addDish;
         public DishWindow(EF.Dish dish)
         {
             InitializeComponent();
+            addDish = dish;
             imgDish.Source = new BitmapImage(new Uri(dish.PhotoPath, UriKind.Relative));
             tbDescription.Text=dish.Description;
             tbCost.Text = dish.Cost.ToString();
@@ -38,6 +41,56 @@ namespace TortugaSmirnova.Windows
             }
             var Structure = Classes.AppData.Context.VW_Composition.ToList().Where(i => i.DishID == dish.ID).FirstOrDefault();
             tbStructure.Text = Structure.Composition;
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAddToOrder_Click(object sender, RoutedEventArgs e)
+        {
+            var isOrderExists = Classes.AppData.Context.OrderDish.ToList().Where(i => i.IDOrder == PublicVariables.IdOrder && i.IDDish == addDish.ID).FirstOrDefault();
+
+            if(isOrderExists == null)
+            {
+                EF.OrderDish orderDish = new EF.OrderDish();
+                orderDish.IDOrder = PublicVariables.IdOrder;
+                orderDish.IDDish = addDish.ID;
+                orderDish.Qty = Convert.ToInt32(tbNumber.Text);
+                Classes.AppData.Context.OrderDish.Add(orderDish);
+                Classes.AppData.Context.SaveChanges();
+
+            }
+            else
+            {
+                isOrderExists.Qty= isOrderExists.Qty+ Convert.ToInt32(tbNumber.Text);
+                Classes.AppData.Context.SaveChanges();
+            }
+            MessageBox.Show("Блюдо добавлено в заказ!");
+            this.Close();
+        }
+
+        private void btnMenu_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnPlus_Click(object sender, RoutedEventArgs e)
+        {
+            tbNumber.Text = (Convert.ToInt64(tbNumber.Text) + 1).ToString();
+        }
+
+        private void btnMinus_Click(object sender, RoutedEventArgs e)
+        {
+            if (tbNumber.Text == "1")
+            {
+
+            }
+            else
+            {
+                tbNumber.Text = (Convert.ToInt64(tbNumber.Text)-1).ToString();
+            }
         }
     }
 }

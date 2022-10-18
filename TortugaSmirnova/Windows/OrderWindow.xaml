@@ -33,23 +33,15 @@
                     FontSize="32" Foreground="#FF292929"                   
                     Margin="0 0 50 0"
                     Background="{x:Null}"   
-                        x:Name="btnMenu" BorderBrush="{x:Null}"
+                        x:Name="btnMenu" BorderBrush="{x:Null}" Click="btnMenu_Click"
                     />
                 <TextBlock
                     Text="Заказ"
                     FontSize="32"
                         Foreground="#FF292929"
                         FontWeight="Bold"
-                    Margin="0 0 50 0"
-                    Background="{x:Null}" 
-                    />
-                <Button Style="{DynamicResource ButtonStyleDefault}"
-                    Content="Выбор столика"
-                    FontSize="32" Foreground="#FF292929"
                     Margin="0 0 0 0"
                     Background="{x:Null}" 
-                    BorderBrush="{x:Null}"
-                        x:Name="btnChoiseTable"
                     />
             </WrapPanel>
         </Border>
@@ -57,30 +49,96 @@
             Grid.Row="2"
             Grid.ColumnSpan="2" 
             Background="#FFF0CAA3"
-            Margin="100 50 100 150"
+            Margin="100 0 100 0"
+            Height="500"
             CornerRadius="10">
-            <StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
                 <TextBlock
                     Text="Состав заказа"
                     FontSize="32"
                         Foreground="#FF292929"
                         FontWeight="Bold"
-                    Margin="0 30 0 0"
+                    Margin="0,15,0,0"
                     Background="{x:Null}"
                     HorizontalAlignment="Center"
                     />
+                <ListView
+            Background="#FFF0CAA3"
+            BorderBrush="{x:Null}" 
+            Foreground="{x:Null}"
+            x:Name="lvOrder"
+            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+            HorizontalContentAlignment="Center"           
+            Margin="30,0,0,0"    
+                    ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                    Grid.Row="1">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            MinWidth="500">
+                                <TextBlock
+                    Text="{Binding Dish.Title}"
+                    FontSize="25"
+                        Foreground="#FF292929"
+                        FontWeight="Bold"
+                    Background="{x:Null}"
+                x:Name="tbTitle"
+                MinWidth="300"
+                    />
+                                <TextBlock
+                    Text="{Binding Qty}"
+                    FontSize="25"
+                        Foreground="#FF292929"
+                        FontWeight="Bold"
+                    Background="{x:Null}"
+                x:Name="tbNumber"
+                Margin="10 0 0 0"
+                    />
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
                 <TextBlock
                     Text="Итого :"
                     FontSize="32"
                         Foreground="#FF292929"
                         FontWeight="Bold"
-                    Margin="40 0 0 0"
+                    Margin="30 15 0 0"
                     Background="{x:Null}" 
-                    
+                    x:Name="tbSum" Grid.Row="2"
                     />
-            </StackPanel>
+            </Grid>
         </Border>
-       
-        
+        <Button Style="{DynamicResource ButtonStyleVolume}"
+            Grid.Row="3"
+                Grid.ColumnSpan="2"
+            Height="100"
+            Width="300"
+            BorderBrush="{x:Null}" 
+            Background="#FFC78244"
+                x:Name="btnReady" Click="btnAddToOrder_Click">
+            <TextBlock
+                    Text="Готово!"
+                    FontSize="32"
+                        Foreground="#FF292929"
+                    Margin="0 0 0 0"
+                    Background="{x:Null}" 
+                FontWeight="DemiBold"
+                    />
+        </Button>
+
     </Grid>
 </Window>

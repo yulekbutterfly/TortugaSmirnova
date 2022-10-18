@@ -51,7 +51,7 @@
                 Height="100"
                 BorderBrush="{x:Null}"
                 Foreground="{x:Null}" 
-                Click="btntable_Click"
+                Click="btntable1_Click"
                 >
             <Button.Background>
                 <ImageBrush ImageSource="D:\задание\Tortuga's\Tortuga's\RES\table1.png" />
@@ -65,7 +65,7 @@
                 Height="100"
                 BorderBrush="{x:Null}"
                 Foreground="{x:Null}"
-                Click="btntable_Click"
+                Click="btntable2_Click"
                 >
             <Button.Background>
                 <ImageBrush ImageSource="D:\задание\Tortuga's\Tortuga's\RES\table2.png" />
@@ -79,7 +79,7 @@
                 Height="100"
                 BorderBrush="{x:Null}"
                 Foreground="{x:Null}"
-                Click="btntable_Click"
+                Click="btntable3_Click"
                 >
             <Button.Background>
                 <ImageBrush ImageSource="D:\задание\Tortuga's\Tortuga's\RES\table 3.png" />
@@ -93,7 +93,7 @@
                 Height="100"
                 BorderBrush="{x:Null}"
                 Foreground="{x:Null}"
-                Click="btntable_Click"
+                Click="btntable4_Click"
                 >
             <Button.Background>
                 <ImageBrush ImageSource="D:\задание\Tortuga's\Tortuga's\RES\table4.png" />
@@ -107,7 +107,7 @@
                 Height="100"
                 BorderBrush="{x:Null}"
                 Foreground="{x:Null}"
-                Click="btntable_Click"
+                Click="btntable5_Click"
                 >
             <Button.Background>
                 <ImageBrush ImageSource="D:\задание\Tortuga's\Tortuga's\RES\table5.png" />
@@ -121,7 +121,7 @@
                 Height="100"
                 BorderBrush="{x:Null}"
                 Foreground="{x:Null}"
-                Click="btntable_Click"
+                Click="btntable6_Click"
                 >
             <Button.Background>
                 <ImageBrush ImageSource="/RES/table6.png" />
@@ -135,7 +135,7 @@
                 Height="100"
                 BorderBrush="{x:Null}"
                 Foreground="{x:Null}"
-                Click="btntable_Click"
+                Click="btntable7_Click"
                 >
             <Button.Background>
                 <ImageBrush ImageSource="D:\задание\Tortuga's\Tortuga's\RES\table7.png" />
@@ -149,7 +149,7 @@
                 Height="100"
                 BorderBrush="{x:Null}"
                 Foreground="{x:Null}"
-                Click="btntable_Click"
+                Click="btntable8_Click"
                 >
             <Button.Background>
                 <ImageBrush ImageSource="D:\задание\Tortuga's\Tortuga's\RES\table8.png" />
@@ -163,7 +163,7 @@
                 Height="100"
                 BorderBrush="{x:Null}"
                 Foreground="{x:Null}"
-                Click="btntable_Click"
+                Click="btntable9_Click"
                 >
             <Button.Background>
                 <ImageBrush ImageSource="D:\задание\Tortuga's\Tortuga's\RES\table9.png" />
@@ -177,7 +177,7 @@
                 Height="100"
                 BorderBrush="{x:Null}"
                 Foreground="{x:Null}"
-                Click="btntable_Click"
+                Click="btntable10_Click"
                 >
             <Button.Background>
                 <ImageBrush ImageSource="D:\задание\Tortuga's\Tortuga's\RES\table10.png" />
@@ -191,7 +191,7 @@
                 Height="100"
                 BorderBrush="{x:Null}"
                 Foreground="{x:Null}"
-                Click="btntable_Click"
+                Click="btntable11_Click"
                 >
             <Button.Background>
                 <ImageBrush ImageSource="D:\задание\Tortuga's\Tortuga's\RES\table11.png" />

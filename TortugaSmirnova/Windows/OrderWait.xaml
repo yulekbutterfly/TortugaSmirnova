@@ -1,0 +1,75 @@
+﻿<Window x:Class="TortugaSmirnova.Windows.OrderWait"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TortugaSmirnova.Windows"
+        mc:Ignorable="d"
+        Title="OrderWait" Height="1200" Width="800" Background="#FFF2D8BC">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="/RES/Tortugas.png"
+               Grid.ColumnSpan="2"
+               Margin="0 0 0 -70"/>
+        <Border
+            Grid.Row="2"
+            Grid.ColumnSpan="2" 
+            Background="#FFF0CAA3"
+            Margin="100 0 100 0"
+            Height="300"
+            CornerRadius="10">
+            <StackPanel>
+                <TextBlock
+                    Text="Мы уже готовим ваш заказ, ожидайте пожалуйста"
+                    FontSize="25"
+                        Foreground="#FF292929"
+                        FontWeight="Bold"
+                    Width="400"
+                    Margin="0 60 0 0"
+                    Background="{x:Null}" 
+                    HorizontalAlignment="Center"
+                    TextWrapping="Wrap" TextAlignment="Center"
+                    />
+                <TextBlock
+                    Text="Официант Имя скоро к вам подойдет"
+                    FontSize="25"
+                        Foreground="#FF292929"
+                        FontWeight="Bold"
+                    Width="500"
+                    Margin="0 60 0 0"
+                    Background="{x:Null}" 
+                    HorizontalAlignment="Center"
+                    TextWrapping="Wrap" TextAlignment="Center"
+                    x:Name="tbWaiter"
+                    />
+            </StackPanel>
+        </Border>
+        <Button Style="{DynamicResource ButtonStyleVolume}"
+            Grid.Row="3"
+                Grid.ColumnSpan="2"
+            Height="100"
+            Width="300"
+            BorderBrush="{x:Null}" 
+            Background="#FFC78244"
+                x:Name="btnReady">
+            <TextBlock
+                    Text="В главное меню!"
+                    FontSize="32"
+                        Foreground="#FF292929"
+                    Margin="0 0 0 0"
+                    Background="{x:Null}" 
+                FontWeight="DemiBold"
+                    />
+        </Button>
+
+    </Grid>
+</Window>

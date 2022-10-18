@@ -40,7 +40,7 @@
                     Margin="0 0 50 0"
                     Background="{x:Null}" 
                     BorderBrush="{x:Null}"
-                        x:Name="btnOrder"
+                        x:Name="btnOrder" Click="btnOrder_Click"
                     />
                 <Button Style="{DynamicResource ButtonStyleDefault}"
                     Content="Выбор столика"
@@ -48,7 +48,7 @@
                     Margin="0 0 0 0"
                     Background="{x:Null}" 
                     BorderBrush="{x:Null}"
-                        x:Name="btnChoiseTable"
+                        x:Name="btnChoiseTable" Click="btnChoiseTable_Click"
                     />
             </WrapPanel>
         </Border>
@@ -93,13 +93,14 @@
             </StackPanel>
         </Border>
 
-        <ListView Style="{DynamicResource ListViewStyleDefault}"
+        <ListView
             Grid.Column="1"
             Grid.Row="3"
             Background="#FFF0CAA3"
             BorderBrush="{x:Null}" 
             Foreground="{x:Null}"
             x:Name="lvMenu"
+            Visibility="Collapsed"
             ScrollViewer.HorizontalScrollBarVisibility="Disabled"
             HorizontalContentAlignment="Center" MouseDoubleClick="lvMenu_MouseDoubleClick">
             <ListView.ItemsPanel>

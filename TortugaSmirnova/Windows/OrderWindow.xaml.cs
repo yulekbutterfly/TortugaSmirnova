@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TortugaSmirnova.Classes;
 
 namespace TortugaSmirnova.Windows
 {
@@ -22,6 +23,33 @@ namespace TortugaSmirnova.Windows
         public OrderWindow()
         {
             InitializeComponent();
+            Filter();
+        }
+
+        private void Filter()
+        {
+            List<EF.OrderDish> orderList = new List<EF.OrderDish>();
+            orderList = Classes.AppData.Context.OrderDish.Where(i => i.IDOrder == PublicVariables.IdOrder).ToList();
+            lvOrder.ItemsSource= orderList;
+            decimal a = 0;
+            foreach(EF.OrderDish order in orderList)
+            {
+                a = Convert.ToDecimal(a + order.Dish.Cost*order.Qty);
+            }
+            tbSum.Text = "Итого: " + a + " руб.";
+        }
+
+        private void btnMenu_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAddToOrder_Click(object sender, RoutedEventArgs e)
+        {
+            OrderWait orderWait = new OrderWait();
+            this.Hide();
+            orderWait.ShowDialog();
+            this.ShowDialog();
         }
     }
 }

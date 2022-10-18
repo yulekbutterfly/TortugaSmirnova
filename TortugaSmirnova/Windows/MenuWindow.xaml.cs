@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TortugaSmirnova.Classes;
 
 namespace TortugaSmirnova.Windows
 {
@@ -26,6 +27,7 @@ namespace TortugaSmirnova.Windows
 
         private void btnPizza_Click(object sender, RoutedEventArgs e)
         {
+            lvMenu.Visibility = Visibility.Visible;
             btnPizza.FontWeight = FontWeights.Bold;
             btnBurgers.FontWeight = FontWeights.Regular;
             btnDesserts.FontWeight = FontWeights.Regular;
@@ -36,6 +38,7 @@ namespace TortugaSmirnova.Windows
 
         private void btnShawerma_Click(object sender, RoutedEventArgs e)
         {
+            lvMenu.Visibility = Visibility.Visible;
             btnPizza.FontWeight = FontWeights.Regular;
             btnBurgers.FontWeight = FontWeights.Regular;
             btnDesserts.FontWeight = FontWeights.Regular;
@@ -46,6 +49,7 @@ namespace TortugaSmirnova.Windows
 
         private void btnBurgers_Click(object sender, RoutedEventArgs e)
         {
+            lvMenu.Visibility = Visibility.Visible;
             btnPizza.FontWeight = FontWeights.Regular;
             btnBurgers.FontWeight = FontWeights.Bold;
             btnDesserts.FontWeight = FontWeights.Regular;
@@ -56,6 +60,7 @@ namespace TortugaSmirnova.Windows
 
         private void btnDesserts_Click(object sender, RoutedEventArgs e)
         {
+            lvMenu.Visibility = Visibility.Visible;
             btnPizza.FontWeight = FontWeights.Regular;
             btnBurgers.FontWeight = FontWeights.Regular;
             btnDesserts.FontWeight = FontWeights.Bold;
@@ -66,6 +71,7 @@ namespace TortugaSmirnova.Windows
 
         private void btnDrinks_Click(object sender, RoutedEventArgs e)
         {
+            lvMenu.Visibility = Visibility.Visible;
             btnPizza.FontWeight = FontWeights.Regular;
             btnBurgers.FontWeight = FontWeights.Regular;
             btnDesserts.FontWeight = FontWeights.Regular;
@@ -86,6 +92,35 @@ namespace TortugaSmirnova.Windows
             var dish = lvMenu.SelectedItem as EF.Dish;
             DishWindow dishWindow = new DishWindow(dish);
             dishWindow.ShowDialog();
+        }
+
+        private void btnChoiseTable_Click(object sender, RoutedEventArgs e)
+        {
+            PublicVariables.TableNumber = null;
+            foreach(var item in Classes.AppData.Context.OrderDish.ToList())
+            {
+                if(item.IDOrder== PublicVariables.IdOrder)
+                {
+                    Classes.AppData.Context.OrderDish.Remove(item);
+                }
+            }
+            this.Close();
+        }
+
+        private void btnOrder_Click(object sender, RoutedEventArgs e)
+        {
+            var isAnyDishInOrder = Classes.AppData.Context.OrderDish.ToList().Where(i => i.IDOrder == PublicVariables.IdOrder).FirstOrDefault();
+            if (isAnyDishInOrder==null)
+            {
+                MessageBox.Show("В заказе нет блюд!");
+            }
+            else
+            {
+                OrderWindow orderWindow = new OrderWindow();
+                this.Hide();
+                orderWindow.ShowDialog();
+                this.ShowDialog();
+            }
         }
     }
 }
