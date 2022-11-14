@@ -33,7 +33,9 @@
                     FontSize="32" Foreground="#FF292929"                   
                     Margin="0 0 50 0"
                     Background="{x:Null}"   
-                        x:Name="btnMenu" BorderBrush="{x:Null}" Click="btnMenu_Click"
+                        x:Name="btnMenu" 
+                        BorderBrush="{x:Null}"
+                        Click="btnMenu_Click"
                     />
                 <TextBlock
                     Text="Заказ"
@@ -44,19 +46,20 @@
                     Background="{x:Null}" 
                     />
             </WrapPanel>
+       
         </Border>
         <StackPanel
-            Grid.Row="2">
+             Grid.Row="2">
             <Image Height="300"
                Source="\DishesImages\cheeseburger.png"
-                   Margin=" 50 20 0 0"
-                   x:Name="imgDish">
+               Margin=" 50 20 0 0"
+               x:Name="imgDish">
             </Image>
             <TextBlock
                     Text="Название"
                     FontSize="25"
-                        Foreground="#FF292929"
-                        FontWeight="Bold"
+                    Foreground="#FF292929"
+                    FontWeight="Bold"
                     Margin="60 0 0 0"
                     Background="{x:Null}" 
                 x:Name="tbName"
@@ -64,11 +67,11 @@
             <TextBlock
                     Text="Цена"
                     FontSize="25"
-                        Foreground="#FF292929"
-                        FontWeight="Bold"
+                    Foreground="#FF292929"
+                    FontWeight="Bold"
                     Margin="60 10 0 0"
                     Background="{x:Null}" 
-                x:Name="tbCost"
+                    x:Name="tbCost"
                     />
             <WrapPanel
                 Margin="0 30 0 0">
@@ -77,23 +80,29 @@
                     Margin="60 0 0 0"
                 x:Name="btnMinus"
                     FontSize="25" Foreground="#FF292929"
-                    FontWeight="Bold" BorderBrush="{x:Null}" Background="{x:Null}" Click="btnMinus_Click"
+                    FontWeight="Bold" BorderBrush="{x:Null}" 
+                    Background="{x:Null}" 
+                    Click="btnMinus_Click"
                     />
                 <TextBlock
                     Text="1"
                     FontSize="25"
-                        Foreground="#FF292929"
-                        FontWeight="Bold"
+                    Foreground="#FF292929"
+                    FontWeight="Bold"
                     Background="{x:Null}"
                 x:Name="tbNumber"
                 Margin="10 0 0 0"
                     />
                 <Button Style="{DynamicResource ButtonStyleDefault}"
                     Content="+"                   
-                x:Name="btnPlus"
+                    x:Name="btnPlus"
                     Margin="10 0 0 0"
-                    FontSize="25" Foreground="#FF292929"
-                    FontWeight="Bold" BorderBrush="{x:Null}" Background="{x:Null}" Click="btnPlus_Click"
+                    FontSize="25" 
+                    Foreground="#FF292929"
+                    FontWeight="Bold" 
+                    BorderBrush="{x:Null}" 
+                    Background="{x:Null}" 
+                    Click="btnPlus_Click"
                     />
             </WrapPanel>
         </StackPanel>
@@ -109,13 +118,13 @@
                     Background="{x:Null}" 
                     />
             <TextBlock
-                    Text="Описанистое описание бла блаблабла блаблаблаблабла блаблабла блаблаблабла "
+                    Text="Описанистое описание описание описание описание описание описание описание"
                     FontSize="25"
-                        Foreground="#FF292929"
+                    Foreground="#FF292929"
                     Margin="20 10 0 0"
                     Background="{x:Null}"
-                TextWrapping="Wrap"
-                x:Name="tbDescription"
+                    TextWrapping="Wrap"
+                    x:Name="tbDescription"
                     />
             <TextBlock
                     Text="Вес/Объем"
@@ -129,10 +138,10 @@
             <TextBlock
                     Text="-9999"
                     FontSize="25"
-                        Foreground="#FF292929"
+                    Foreground="#FF292929"
                     Margin="20 10 0 0"
                     Background="{x:Null}"
-                x:Name="tbWeightVolume"
+                    x:Name="tbWeightVolume"
                     />
             <TextBlock
                     Text="Состав"
@@ -143,9 +152,9 @@
                     Background="{x:Null}" 
                     />
             <TextBlock
-                    Text="гемео пистыцыды трешшшшшшшшш"
+                    Text="сыр сыр сыр сыр сыр сыр"
                     FontSize="25"
-                        Foreground="#FF292929"
+                    Foreground="#FF292929"
                     Margin="20 10 0 0"
                     Background="{x:Null}" 
                 TextWrapping="Wrap"
@@ -158,31 +167,33 @@
             Width="300"
             BorderBrush="{x:Null}" 
             Background="#FFC78244"
-                x:Name="btnBack" Click="btnBack_Click">
+            x:Name="btnBack" Click="btnBack_Click">
             <TextBlock
                     Text="Назад"
                     FontSize="32"
-                        Foreground="#FF292929"
+                    Foreground="#FF292929"
                     Margin="0 0 0 0"
                     Background="{x:Null}" 
-                FontWeight="DemiBold"
+                    FontWeight="DemiBold"
                     />
         </Button>
-        <Button Style="{DynamicResource ButtonStyleVolume}"
+        <Button 
+            Style="{DynamicResource ButtonStyleVolume}"
             Grid.Row="3"
-                Grid.Column="2"
+            Grid.Column="2"
             Height="100"
             Width="300"
             BorderBrush="{x:Null}" 
             Background="#FFC78244"
-                x:Name="btnAddToOrder" Click="btnAddToOrder_Click">
+            x:Name="btnAddToOrder" 
+            Click="btnAddToOrder_Click">
             <TextBlock
                     Text="Добавить заказ"
                     FontSize="32"
-                        Foreground="#FF292929"
+                    Foreground="#FF292929"
                     Margin="0 0 0 0"
                     Background="{x:Null}" 
-                FontWeight="DemiBold"
+                    FontWeight="DemiBold"
                     />
         </Button>
     </Grid>

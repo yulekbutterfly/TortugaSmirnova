@@ -27,7 +27,17 @@ namespace TortugaSmirnova.Windows
             addDish = dish;
             imgDish.Source = new BitmapImage(new Uri(dish.PhotoPath, UriKind.Relative));
             tbDescription.Text=dish.Description;
-            tbCost.Text = dish.Cost.ToString();
+            if ((DateTime.Now.Day == 29 || DateTime.Now.Day == 30 || DateTime.Now.Day == 31) && DateTime.Now.DayOfWeek.ToString() == "Saturday")
+            {
+                dish.Cost = dish.Cost - (dish.Cost * Convert.ToDecimal(0.11));
+                tbCost.Text = dish.Cost.ToString() +" - Скидка 11%";
+            }
+            else
+            {
+                tbCost.Text = dish.Cost.ToString();
+                //dish.Cost = dish.Cost - (dish.Cost * Convert.ToDecimal(0.11));
+                //tbCost.Text = dish.Cost.ToString() + " - Скидка 11%";
+            }           
             tbName.Text = dish.Title;
             if (dish.WeigntInGrams == null)
             {

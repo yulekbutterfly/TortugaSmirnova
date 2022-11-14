@@ -102,7 +102,8 @@
             x:Name="lvMenu"
             Visibility="Collapsed"
             ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-            HorizontalContentAlignment="Center" MouseDoubleClick="lvMenu_MouseDoubleClick">
+            HorizontalContentAlignment="Center" 
+            MouseDoubleClick="lvMenu_MouseDoubleClick">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel/>
