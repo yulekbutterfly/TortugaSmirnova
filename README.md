@@ -58,6 +58,67 @@
 
 <h1>БД</h1>
 
+![image](https://user-images.githubusercontent.com/98512778/212114864-d51235e3-2b15-495a-a4ac-25b1957daedb.png)
+
+<h2>Employee(Сотрудник)</h2>
+
+![image](https://user-images.githubusercontent.com/98512778/212115086-ed565b87-c12c-4e83-a03e-31ecf00cf3bc.png)
+
+Сущность хранящая данные сотрудников
+
+<h2>Order(Заказ)</h2>
+
+![image](https://user-images.githubusercontent.com/98512778/212115086-ed565b87-c12c-4e83-a03e-31ecf00cf3bc.png)
+
+Сущность хранящая данные о заказе
+
+<h2>Dish(Блюдо)</h2>
+
+![image](https://user-images.githubusercontent.com/98512778/212116009-9634b073-da08-4446-bd85-a4aae3b44e50.png)
+
+Сущность хранящая данные позиции меню
+
+<h2>OrderDish(Блюда в заказе)</h2>
+
+![image](https://user-images.githubusercontent.com/98512778/212115086-ed565b87-c12c-4e83-a03e-31ecf00cf3bc.png)
+
+Сущность хранящая блюда, которые содержит заказ
+
+<h2>Role(Должность)</h2>
+
+![image](https://user-images.githubusercontent.com/98512778/212116790-37db762d-27aa-415a-b87f-174b65daae18.png)
+
+Сущность хранящая должности сотрудников
+
+<h2>Gender(Гендер)</h2>
+
+![image](https://user-images.githubusercontent.com/98512778/212116910-5aa9e3c9-ace9-4a4a-8008-233c9e49daba.png)
+
+Сущность хранящая гендеры
+
+<h2>Table(Столик)</h2>
+
+![image](https://user-images.githubusercontent.com/98512778/212117141-2a76b1db-44b5-4661-a45a-38c1a9a1f7a5.png)
+
+Сущность хранящая номера столиков
+
+<h2>Menu(Категории)</h2>
+
+![image](https://user-images.githubusercontent.com/98512778/212117409-8a5c58fb-26ec-470e-9dad-f26851c28375.png)
+
+Сущность хранящая категории меню
+
+<h2>Product(Ингридиенты)</h2>
+
+![image](https://user-images.githubusercontent.com/98512778/212119161-cf416842-0424-4d6e-b219-f0ddb6ed0d07.png)
+
+Сущность хранящая ингридиенты
+
+<h2>DishProduct(Ингридиенты блюда)</h2>
+
+![image](https://user-images.githubusercontent.com/98512778/212119415-260e16ea-12e0-4943-93f9-f084b0ee227a.png)
+
+Сущность хранящая ингридиенты содержащиеся в блюде
 
 <h1>UseCase</h1>
 
