@@ -5,7 +5,7 @@
 
 <br> Структура проекта: <br>
 
-![image](https://user-images.githubusercontent.com/98512778/212545646-79ccdb01-1fa0-495b-b991-0d5ea364526f.png)
+![image](https://user-images.githubusercontent.com/98512778/212545711-2e1e530c-8616-4445-9137-2fa9f65f805b.png)
 
 <br> Первое окно проекта-выбор столика: <br>
 
