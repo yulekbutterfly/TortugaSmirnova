@@ -3,6 +3,10 @@
 
 <h1>  Работу выполнила Смирнова Юлия  </h1>
 
+<br> Структура проекта: <br>
+
+![image](https://user-images.githubusercontent.com/98512778/212542509-52ad420d-6915-4fe7-9515-6b9ba1e0d096.png)
+
 <br> Первое окно проекта-выбор столика: <br>
 
 ![image](https://user-images.githubusercontent.com/98512778/196400819-2f42634f-7c13-45e3-8e1e-ab53a537db5e.png)
